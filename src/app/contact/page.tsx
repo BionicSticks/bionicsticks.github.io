@@ -6,49 +6,48 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-16">
-      <h1 className="mb-8 text-3xl font-bold text-gray-900">Contact</h1>
+    <article className="mx-auto max-w-3xl px-6 py-16">
+      <h1 className="mb-10 text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+        Contact
+      </h1>
 
-      <p className="mb-8 text-gray-600 leading-relaxed">
-        Interested in working together or have questions about any of my
-        projects? Feel free to reach out.
+      <p className="mb-10 max-w-2xl text-base leading-relaxed text-ink">
+        The quickest way to reach me is by email. I&apos;m also on GitHub —
+        many of my repositories are private, but what&apos;s on the main page
+        here is a reliable sample of the work.
       </p>
 
-      <div className="space-y-4">
+      <dl className="space-y-6">
         <div>
-          <h2 className="text-sm font-medium uppercase tracking-wide text-gray-500">
-            GitHub
-          </h2>
-          <a
-            href="https://github.com/BionicSticks"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:text-blue-800"
-          >
-            github.com/BionicSticks
-          </a>
-        </div>
-
-        <div>
-          <h2 className="text-sm font-medium uppercase tracking-wide text-gray-500">
+          <dt className="mb-1 text-xs font-semibold uppercase tracking-widest text-ink/50">
             Email
-          </h2>
-          <p className="text-gray-600">
-            {/* Replace with your email */}
-            your.email@example.com
-          </p>
+          </dt>
+          <dd>
+            <a
+              href="mailto:marcw203@gmail.com"
+              className="text-base text-ink underline decoration-ink/40 underline-offset-4 transition hover:text-secondary hover:decoration-secondary"
+            >
+              marcw203@gmail.com
+            </a>
+          </dd>
         </div>
 
         <div>
-          <h2 className="text-sm font-medium uppercase tracking-wide text-gray-500">
-            LinkedIn
-          </h2>
-          <p className="text-gray-600">
-            {/* Replace with your LinkedIn URL */}
-            linkedin.com/in/your-profile
-          </p>
+          <dt className="mb-1 text-xs font-semibold uppercase tracking-widest text-ink/50">
+            GitHub
+          </dt>
+          <dd>
+            <a
+              href="https://github.com/BionicSticks"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-base text-ink underline decoration-ink/40 underline-offset-4 transition hover:text-secondary hover:decoration-secondary"
+            >
+              github.com/BionicSticks
+            </a>
+          </dd>
         </div>
-      </div>
-    </div>
+      </dl>
+    </article>
   );
 }

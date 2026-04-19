@@ -1,18 +1,21 @@
 import Image from "next/image";
+import Link from "next/link";
 import TechBadge from "./TechBadge";
 import type { Project } from "@/data/projects";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="overflow-hidden rounded-lg border border-gray-200 bg-white">
-      {/* Media slot */}
-      <div className="relative aspect-video w-full bg-gray-100">
+    <Link
+      href={`/projects/${project.id}/`}
+      className="group block overflow-hidden rounded-lg border border-ink/15 bg-tertiary transition hover:border-secondary"
+    >
+      <div className="relative aspect-video w-full bg-ink/5">
         {project.video ? (
           <video
             src={project.video}
             className="h-full w-full object-cover"
-            controls
             preload="metadata"
+            muted
           />
         ) : project.image ? (
           <Image
@@ -22,54 +25,26 @@ export default function ProjectCard({ project }: { project: Project }) {
             className="object-cover"
           />
         ) : (
-          <div className="flex h-full items-center justify-center text-gray-400">
+          <div className="flex h-full items-center justify-center text-xs text-ink/40">
             Screenshot coming soon
           </div>
         )}
       </div>
 
-      {/* Content */}
       <div className="p-5">
-        <h3 className="mb-2 text-lg font-semibold text-gray-900">
+        <h3 className="mb-2 text-lg font-semibold tracking-tight text-ink">
           {project.title}
         </h3>
-        <p className="mb-4 text-sm leading-relaxed text-gray-600">
-          {project.description}
+        <p className="mb-4 text-sm leading-relaxed text-ink/70">
+          {project.summary}
         </p>
 
-        {/* Tech stack */}
-        <div className="mb-4 flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2">
           {project.techStack.map((tech) => (
             <TechBadge key={tech} label={tech} />
           ))}
         </div>
-
-        {/* Links */}
-        {(project.liveUrl || project.githubUrl) && (
-          <div className="flex gap-4 text-sm">
-            {project.liveUrl && (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-blue-600 hover:text-blue-800"
-              >
-                Live Demo
-              </a>
-            )}
-            {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-gray-600 hover:text-gray-900"
-              >
-                GitHub
-              </a>
-            )}
-          </div>
-        )}
       </div>
-    </div>
+    </Link>
   );
 }

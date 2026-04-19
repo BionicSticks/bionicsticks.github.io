@@ -1,8 +1,24 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-200 bg-white">
-      <div className="mx-auto max-w-5xl px-6 py-6 text-center text-sm text-gray-500">
-        &copy; {new Date().getFullYear()} Marc. All rights reserved.
+    <footer className="border-t border-ink/10 bg-tertiary">
+      <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-8 text-sm text-ink/60 sm:flex-row sm:items-center sm:justify-between">
+        <span>&copy; {new Date().getFullYear()} Marc</span>
+        <div className="flex gap-6">
+          <a
+            href="https://github.com/BionicSticks"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-ink hover:text-secondary"
+          >
+            GitHub
+          </a>
+          <a
+            href="mailto:marcw203@gmail.com"
+            className="text-ink hover:text-secondary"
+          >
+            Email
+          </a>
+        </div>
       </div>
     </footer>
   );
