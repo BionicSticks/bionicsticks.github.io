@@ -13,7 +13,7 @@ export type Project = {
   liveUrl?: string;
   githubUrl?: string;
   featuredOrder?: number;
-  gallery?: { src: string; caption: string }[];
+  gallery?: { src: string; heading: string; caption: string }[];
 };
 
 export const projects: Project[] = [
@@ -30,27 +30,31 @@ export const projects: Project[] = [
     role:
       "I designed the curriculum graph, the mastery model, and the service architecture around Claude. The thesis is that the LLM should be a tutor constrained by structure, memory, and pedagogy — the Anthropic SDK is a dependency, not the product.",
     techStack: ["React", "Express", "TypeScript", "Supabase", "Claude API", "ReactFlow", "KaTeX"],
-    image: "/images/Mathematitron/Homepage.png",
+    image: "/images/Mathematitron/MathHero.png",
     githubUrl: "https://github.com/BionicSticks/MathematiTron",
-    featuredOrder: 1,
+    featuredOrder: 3,
     gallery: [
       {
         src: "/images/Mathematitron/ConceptMap1.png",
+        heading: "Curriculum as a prerequisite graph",
         caption:
           "The curriculum as a prerequisite graph in ReactFlow. Nodes are colour-coded by mastery state; clicking a concept surfaces difficulty, estimated time, and a jump into practice.",
       },
       {
         src: "/images/Mathematitron/PracticePage.png",
+        heading: "The practice surface",
         caption:
           "The practice surface. The mastery layer promotes concepts that are prerequisites of the student's current goal and newly unlocked — not a flat list.",
       },
       {
         src: "/images/Mathematitron/ProgressPage.png",
+        heading: "Per-student progress dashboard",
         caption:
           "Per-student progress: overall mastery, streaks, an activity heatmap, and category-level breakdowns — all derived from practice outcomes.",
       },
       {
         src: "/images/Mathematitron/Settings.png",
+        heading: "Goal configuration",
         caption:
           "Goal configuration. Students set a custom target concept, and the pacing model works backward through prerequisites to build the learning path.",
       },
@@ -70,36 +74,36 @@ export const projects: Project[] = [
       "I designed the data model, the analysis pipeline, and the report UX; I used Claude and Cursor to accelerate the scaffolding and debug the harder stats edge cases, but the analytical choices and architecture are mine.",
     outcome: "Used internally for research collaborations.", // TODO verify — set to undefined if not accurate
     techStack: ["Next.js", "FastAPI", "Python", "Supabase", "Plotly", "Tailwind"],
-    image: "/images/OPID/Homepage.png",
-    featuredOrder: 2,
+    image: "/images/OPID/HomePageCropped.png",
+    featuredOrder: 1,
     gallery: [
       {
-        src: "/images/OPID/Overview.png",
-        caption:
-          "Project dashboard: sample metadata, platform/group configuration, and summary statistics render immediately on NPX ingest — the downstream pipeline keys off this view.",
-      },
-      {
         src: "/images/OPID/QC.png",
+        heading: "Quality control",
         caption:
           "Quality-control step: NPX distributions per sample, outlier flags, and missing-data summaries. Runs on upload, no tuning required.",
       },
       {
-        src: "/images/OPID/VolcanoPlots.png",
+        src: "/images/OPID/HeroVP.png",
+        heading: "Differential abundance — volcano plot",
         caption:
           "Differential abundance as an interactive Plotly volcano. Hovering any protein surfaces fold change, adjusted p-value, and direction; significance thresholds are marked.",
       },
       {
-        src: "/images/OPID/GO.png",
+        src: "/images/OPID/Hero GO1.png",
+        heading: "Gene-ontology enrichment",
         caption:
           "Gene-ontology pathway enrichment against standard gene-set libraries, ranked by fold enrichment and shaded by adjusted p-value.",
       },
       {
-        src: "/images/OPID/Diff_Network.png",
+        src: "/images/OPID/Hero DiffNet.png",
+        heading: "Differential interaction network",
         caption:
           "Differential protein-protein interaction network: edges that shift between experimental groups, coloured by degree. Exports to Cytoscape JSON for downstream work.",
       },
       {
-        src: "/images/OPID/ML.png",
+        src: "/images/OPID/Hero ML3.png",
+        heading: "Classification & feature importance",
         caption:
           "ML layer: cross-validated confusion matrix and L1-regularised feature importances that surface which proteins drive classification between groups.",
       },
@@ -119,10 +123,10 @@ export const projects: Project[] = [
       "I designed the tiered classification logic and built the frontend and scoring layer; AI tools accelerated iteration on the UI and prompt-tuning, with the pipeline design and scoring heuristics being my work.",
     outcome: "Publicly live at foodortrash.com.",
     techStack: ["Next.js", "TypeScript", "Tailwind", "AI/ML"],
-    image: "/images/foodortrash.png",
+    image: "/images/FoodOrTrash/FoTHomePage.png",
     liveUrl: "https://foodortrash.com",
     githubUrl: "https://github.com/BionicSticks/FoodOrTrash",
-    featuredOrder: 3,
+    featuredOrder: 2,
   },
   {
     id: "watchgrapher",
@@ -167,7 +171,7 @@ export const projects: Project[] = [
     role:
       "I designed the pipeline and the result unification layer, and built the full stack. AI tooling accelerated the thermodynamics and API-integration code; the architecture and scientific correctness checks are my work.",
     techStack: ["Next.js", "FastAPI", "Python", "Bioinformatics"],
-    image: "/images/primerchecker.png",
+    image: "/images/PrimerChecker/PCHero.png",
   },
   {
     id: "kioki",

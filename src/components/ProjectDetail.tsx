@@ -101,6 +101,9 @@ export default function ProjectDetail({ project }: { project: Project }) {
           <div className="space-y-10">
             {project.gallery.map((item) => (
               <figure key={item.src}>
+                <h3 className="mb-3 text-base font-semibold tracking-tight text-ink">
+                  {item.heading}
+                </h3>
                 <div className="overflow-hidden rounded-lg border border-ink/15 bg-ink/5">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img

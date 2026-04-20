@@ -13,7 +13,7 @@ export default function ProjectCarousel() {
         <Link
           key={project.id}
           href={`/projects/${project.id}/`}
-          className="group relative flex min-w-[85%] shrink-0 snap-center flex-col overflow-hidden rounded-lg border border-ink/15 bg-tertiary transition hover:border-secondary sm:min-w-[60%] lg:min-w-[48%]"
+          className="group block min-w-[85%] shrink-0 snap-center overflow-hidden rounded-lg border border-ink/15 bg-tertiary transition hover:border-secondary sm:min-w-[60%] lg:min-w-[48%]"
         >
           <div className="relative aspect-video w-full bg-ink/5">
             {project.video ? (
@@ -37,14 +37,14 @@ export default function ProjectCarousel() {
             )}
           </div>
 
-          <div className="flex flex-1 flex-col p-6">
+          <div className="p-6">
             <h3 className="mb-2 text-xl font-semibold tracking-tight text-ink">
               {project.title}
             </h3>
             <p className="mb-4 text-sm leading-relaxed text-ink/70">
               {project.tagline}
             </p>
-            <div className="mt-auto flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2">
               {project.techStack.slice(0, 4).map((tech) => (
                 <TechBadge key={tech} label={tech} />
               ))}

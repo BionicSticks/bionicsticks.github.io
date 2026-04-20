@@ -30,9 +30,16 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-tertiary text-ink">
+      <body className="relative flex min-h-full flex-col bg-bg text-ink">
+        <div
+          aria-hidden
+          className="pointer-events-none fixed inset-0 z-10 overflow-hidden"
+        >
+          <div className="absolute -top-24 right-[-120px] h-[460px] w-[460px] rotate-12 bg-primary/15" />
+          <div className="absolute top-[80px] right-[-40px] h-[360px] w-[360px] -rotate-6 bg-secondary/15" />
+        </div>
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="relative z-20 flex-1">{children}</main>
         <Footer />
       </body>
     </html>
