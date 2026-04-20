@@ -143,22 +143,7 @@ export const projects: Project[] = [
     techStack: ["Swift", "SwiftUI", "Signal Processing", "iOS"],
     image: "/images/watchgrapher.png",
   },
-  {
-    id: "atlas-chorechamp",
-    title: "Atlas ChoreChamp",
-    tagline: "A chore-management app for flatshares that turns shared-household fairness into something measurable.",
-    summary:
-      "Chore app for shared households with task assignment, leaderboards, and long-term fairness analytics.",
-    problem:
-      "Flatmates relitigate who does what constantly. Most shared-household apps are flat task lists without any memory of contribution over time, which means the person who actually keeps the place running has no way to surface that without it feeling like a confrontation.",
-    approach:
-      "React + Vite for the web app, wrapped with Capacitor for mobile. Supabase handles multi-tenant auth and realtime sync so a completion on one device appears on every flatmate's screen. The core is a contribution-weighting model: tasks have difficulty and frequency scores, completions feed a rolling leaderboard, and analytics surface long-run imbalance (who consistently over- or under-contributes).",
-    role:
-      "I designed the fairness model, built the full stack, and led the UX decisions around how to surface imbalance without being punitive. AI tooling accelerated the component-level implementation work.",
-    techStack: ["React", "Vite", "Capacitor", "Supabase", "Tailwind"],
-    image: "/images/atlas-chorechamp.png",
-  },
-  {
+{
     id: "primerchecker",
     title: "PrimerChecker",
     tagline: "A PCR primer validation tool that combines dual-source genomic search with local thermodynamic analysis.",

@@ -44,7 +44,15 @@ Open http://localhost:3000.
 npm run build
 ```
 
-This produces a fully static `out/` directory (configured via `output: "export"` in `next.config.ts`). The contents of `out/` are what gets served by GitHub Pages — no Node runtime required on the host.
+This produces a fully static `out/` directory (configured via `output: "export"` in `next.config.ts`). The contents of `out/` are what gets served by the eventual host — no Node runtime required.
+
+**Current deployment status: paused.** The repo is private while the site is being built out. `.github/workflows/deploy.yml` has been switched from `on: push` to `on: workflow_dispatch`, so nothing auto-deploys on every push (which would otherwise fail on a free private repo, since GitHub Pages on a private repo requires GitHub Pro).
+
+When the site is ready to go live, choose one:
+
+1. **Flip the repo public**, restore `on: push: branches: [main]` in the workflow, and enable Pages in repo settings. Free, simplest.
+2. **Keep the repo private, upgrade to GitHub Pro**, and enable Pages with private visibility.
+3. **Point a different host at the repo** (Vercel or Netlify both support private repos on free tiers and offer preview URLs per branch).
 
 ## Images
 

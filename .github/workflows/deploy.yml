@@ -1,8 +1,10 @@
 name: Deploy to GitHub Pages
 
+# Deploys are paused while the repo is private. Trigger manually from the
+# GitHub Actions UI, or restore `on: push: branches: [main]` when the site
+# is ready to go live.
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read

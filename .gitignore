@@ -39,3 +39,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local planning / private notes (not meant for the public repo once it's public)
+/planning/
+/private/
+/scratch/
+NOTES.md
+TODO.md
+SCRATCH.md
+*.private.md
+*.local.md
+
+# editor / IDE
+.idea/
+.vscode/
+*.swp
+*.swo
