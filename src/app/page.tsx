@@ -1,6 +1,6 @@
 import ProjectCard from "@/components/ProjectCard";
 import ProjectCarousel from "@/components/ProjectCarousel";
-import { projects } from "@/data/projects";
+import { visibleProjects } from "@/data/projects";
 
 export default function Home() {
   return (
@@ -30,7 +30,7 @@ export default function Home() {
           All projects
         </h2>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
+          {visibleProjects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>

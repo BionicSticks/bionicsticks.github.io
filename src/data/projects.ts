@@ -14,6 +14,7 @@ export type Project = {
   githubUrl?: string;
   featuredOrder?: number;
   gallery?: { src: string; heading: string; caption: string }[];
+  draft?: boolean;
 };
 
 export const projects: Project[] = [
@@ -142,6 +143,7 @@ export const projects: Project[] = [
       "I designed the DSP pipeline and the measurement UI. Claude and Cursor were used for iteration on signal-processing edge cases; the algorithmic design, tuning against real watches, and the native iOS architecture are my work.",
     techStack: ["Swift", "SwiftUI", "Signal Processing", "iOS"],
     image: "/images/watchgrapher.png",
+    draft: true,
   },
 {
     id: "primerchecker",
@@ -152,11 +154,37 @@ export const projects: Project[] = [
     problem:
       "Primer validation is a chore. You need to check thermodynamic properties (Tm, GC content, hairpins, dimers) and specificity across the genome, which today means bouncing between a local tool for the maths and at least two websites (UCSC BLAT, NCBI BLAST) for the searches. Each step is cheap; the context-switching isn't.",
     approach:
-      "A Next.js frontend with a FastAPI Python backend. Local analysis modules compute Tm using nearest-neighbour thermodynamics, plus GC, hairpin, and dimer checks. Genomic specificity searches fan out in parallel to UCSC and NCBI, with results normalised into a unified specificity view. Session-based progress tracking lets the user queue multiple primers and come back for the results.",
+      "A Next.js frontend with a FastAPI Python backend. Local analysis modules compute Tm using nearest-neighbour thermodynamics, plus GC, hairpin, and dimer checks. Genomic specificity searches fan out in parallel to NCBI Primer-BLAST, NCBI BLAST, and Ensembl, with results normalised into a unified specificity view. Session-based progress tracking lets the user queue multiple primers and come back for the results.",
     role:
       "I designed the pipeline and the result unification layer, and built the full stack. AI tooling accelerated the thermodynamics and API-integration code; the architecture and scientific correctness checks are my work.",
     techStack: ["Next.js", "FastAPI", "Python", "Bioinformatics"],
     image: "/images/PrimerChecker/PCHero.png",
+    gallery: [
+      {
+        src: "/images/PrimerChecker/Landing.png",
+        heading: "Primer input and target selection",
+        caption:
+          "Pick a target type — genomic DNA, cDNA/RT-qPCR, or bisulfite/methylation — paste the forward and reverse sequences, and queue the run.",
+      },
+      {
+        src: "/images/PrimerChecker/Search.png",
+        heading: "Genome search kicks off in parallel",
+        caption:
+          "On submit, specificity searches fan out across the configured genomic databases; a recent-searches panel keeps prior queries one click away.",
+      },
+      {
+        src: "/images/PrimerChecker/PrimerAnalysis.png",
+        heading: "Per-primer thermodynamics",
+        caption:
+          "Tm, GC, hairpin risk, and self-dimer severity assessed for each primer, with a single \"good to order\" rollup at the top of the report.",
+      },
+      {
+        src: "/images/PrimerChecker/Working.png",
+        heading: "Dimer check + live search status",
+        caption:
+          "Cross-primer dimer analysis lands immediately, while genomic specificity searches stream in from NCBI Primer-BLAST, NCBI BLAST, and Ensembl.",
+      },
+    ],
   },
   {
     id: "kioki",
@@ -172,9 +200,16 @@ export const projects: Project[] = [
       "I designed the pipeline and the editor UX — the key decision was to treat the model output as editable rather than authoritative. AI tools helped with the audio-processing boilerplate; the product framing and editor design are mine.",
     techStack: ["Capacitor", "AI/ML", "Audio Processing", "TypeScript"],
     image: "/images/kioki.png",
+    draft: true,
   },
 ];
 
-export const featuredProjects = projects
+// Drafts render in `npm run dev` so you can preview WIP entries, but are
+// excluded from the static export so they never ship to the live site.
+const includeDrafts = process.env.NODE_ENV !== "production";
+
+export const visibleProjects = projects.filter((p) => includeDrafts || !p.draft);
+
+export const featuredProjects = visibleProjects
   .filter((p) => p.featuredOrder !== undefined)
   .sort((a, b) => (a.featuredOrder ?? 0) - (b.featuredOrder ?? 0));

@@ -1,10 +1,10 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { projects } from "@/data/projects";
+import { projects, visibleProjects } from "@/data/projects";
 import ProjectDetail from "@/components/ProjectDetail";
 
 export function generateStaticParams() {
-  return projects.map((p) => ({ id: p.id }));
+  return visibleProjects.map((p) => ({ id: p.id }));
 }
 
 export const dynamicParams = false;

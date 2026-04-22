@@ -29,6 +29,10 @@ Project entries live in `src/data/projects.ts`. Each project has a problem / app
 
 Projects can also declare an optional `gallery` — an array of `{ src, heading, caption }` items rendered as a vertical stack on the detail page: each item is a bold heading, the screenshot, and a one-sentence caption.
 
+### Draft entries
+
+Set `draft: true` on a project to keep it scaffolded but exclude it from the live site. Drafts still render in `npm run dev` so you can preview them, but `npm run build` filters them out of the home grid, the featured carousel, and `generateStaticParams` — so the corresponding `/projects/<id>/` route is never written to `out/` and ships nowhere. Flip `draft: false` (or remove the line) when the entry is ready.
+
 ## Local development
 
 ```bash
