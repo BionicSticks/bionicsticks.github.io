@@ -55,3 +55,6 @@ SCRATCH.md
 .vscode/
 *.swp
 *.swo
+
+# claude code local state
+.claude/

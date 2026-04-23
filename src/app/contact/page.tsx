@@ -12,42 +12,27 @@ export default function Contact() {
       </h1>
 
       <p className="mb-10 max-w-2xl text-base leading-relaxed text-ink">
-        The quickest way to reach me is by email. I&apos;m also on GitHub —
-        many of my repositories are private, but what&apos;s on the main page
-        here is a reliable sample of the work.
+        If you&apos;re here from my CV, you already have my direct details.
+        For everything else, drop a line via the button below or find me on
+        GitHub.
       </p>
 
-      <dl className="space-y-6">
-        <div>
-          <dt className="mb-1 text-xs font-semibold uppercase tracking-widest text-ink/50">
-            Email
-          </dt>
-          <dd>
-            <a
-              href="mailto:marcw203@gmail.com"
-              className="text-base text-ink underline decoration-ink/40 underline-offset-4 transition hover:text-secondary hover:decoration-secondary"
-            >
-              marcw203@gmail.com
-            </a>
-          </dd>
-        </div>
-
-        <div>
-          <dt className="mb-1 text-xs font-semibold uppercase tracking-widest text-ink/50">
-            GitHub
-          </dt>
-          <dd>
-            <a
-              href="https://github.com/BionicSticks"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-base text-ink underline decoration-ink/40 underline-offset-4 transition hover:text-secondary hover:decoration-secondary"
-            >
-              github.com/BionicSticks
-            </a>
-          </dd>
-        </div>
-      </dl>
+      <div className="flex flex-wrap gap-4">
+        <a
+          href="mailto:m.enquiries@protonmail.com?subject=Portfolio%20enquiry"
+          className="inline-flex items-center rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-ink transition hover:opacity-90"
+        >
+          Get in touch →
+        </a>
+        <a
+          href="https://github.com/BionicSticks"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center rounded-md border border-ink px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-secondary hover:text-secondary"
+        >
+          GitHub
+        </a>
+      </div>
     </article>
   );
 }

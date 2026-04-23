@@ -75,7 +75,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
 
       <section className="mb-10">
         <h2 className="mb-3 text-xs font-semibold uppercase tracking-widest text-ink/50">
-          My role
+          Synopsis
         </h2>
         <p className="text-base leading-relaxed text-ink">
           {project.role}

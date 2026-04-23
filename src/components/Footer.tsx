@@ -12,11 +12,8 @@ export default function Footer() {
           >
             GitHub
           </a>
-          <a
-            href="mailto:marcw203@gmail.com"
-            className="text-ink hover:text-secondary"
-          >
-            Email
+          <a href="/contact/" className="text-ink hover:text-secondary">
+            Contact
           </a>
         </div>
       </div>
