@@ -13,7 +13,7 @@ export default function About() {
         About
       </h1>
 
-      <div className="space-y-6 text-base leading-relaxed text-ink text-justify hyphens-auto">
+      <div className="space-y-6 text-base leading-relaxed text-ink">
         <p>
           I&apos;m Marc — <span className="font-mono text-sm">BionicSticks</span>{" "}
           on GitHub. I&apos;m an engineer with a background in bioinformatics

@@ -43,7 +43,7 @@ export default function ProjectCarousel() {
         className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4"
         style={{ scrollbarWidth: "thin" }}
       >
-        {featuredProjects.map((project) => (
+        {featuredProjects.map((project, index) => (
           <Link
             key={project.id}
             href={`/projects/${project.id}/`}
@@ -63,6 +63,7 @@ export default function ProjectCarousel() {
                   alt={project.title}
                   fill
                   className="object-cover"
+                  priority={index === 0}
                 />
               ) : (
                 <div className="flex h-full items-center justify-center text-xs text-ink/40">

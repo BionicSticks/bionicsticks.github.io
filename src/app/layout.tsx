@@ -16,9 +16,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://bionicsticks.github.io"),
   title: "Marc | Portfolio",
   description:
     "Engineer shipping real products with an AI-forward toolchain — web apps, native mobile, scientific tools, LLM-native products.",
+  openGraph: {
+    type: "website",
+    siteName: "BionicSticks — Portfolio",
+    url: "https://bionicsticks.github.io",
+    locale: "en_GB",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        type: "image/png",
+        alt: "BionicSticks — Engineer shipping real products with an AI-forward toolchain",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
