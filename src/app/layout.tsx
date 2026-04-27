@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -41,6 +42,10 @@ export default function RootLayout({
         <Navbar />
         <main className="relative z-20 flex-1">{children}</main>
         <Footer />
+        <Script
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "7b1f840d934f47c187bf2b0bd90cb2f0"}'
+        />
       </body>
     </html>
   );
